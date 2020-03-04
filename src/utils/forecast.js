@@ -17,10 +17,14 @@ const forecast = (lat, long, callback) => {
         undefined,
         body.daily.data[0].summary +
           ". It is currently " +
-          body.daily.data[0].temperatureMin +
+          body.currently.temperature +
           " Degrees (F). There is a " +
           body.daily.data[0].precipProbability +
-          "% chance of rain."
+          "% chance of rain. The high is " +
+          body.daily.data[0].temperatureMax +
+          " and the low is " +
+          body.daily.data[0].temperatureMin +
+          "."
       );
     }
   });
